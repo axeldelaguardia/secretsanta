@@ -24,6 +24,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+gem "pry"
+gem "pry-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -46,3 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "shakapacker", "= 7.1"
 
 gem "react_on_rails", "= 13.4"
+
+gem "dotenv-rails", "~> 2.8"
+
+gem "bcrypt", "~> 3.1"
+
+gem "blueprinter", "~> 0.30.0"
