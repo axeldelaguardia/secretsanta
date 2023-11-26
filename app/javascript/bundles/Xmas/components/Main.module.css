@@ -56,11 +56,22 @@ p {
     /* font-family: 'Courier New', Courier, monospace; */
 }
 
+i {
+    font-size: 40px;
+}
+
 .logoutButtonContainer {
     margin-right: auto;
 }
 
 .logged_in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.secretSanta {
     display: flex;
     flex-direction: column;
     align-items: center;

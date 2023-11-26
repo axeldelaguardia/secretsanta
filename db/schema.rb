@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_23_015720) do
+ActiveRecord::Schema.define(version: 2023_11_23_232921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2023_11_23_015720) do
     t.string "uid"
     t.string "provider"
     t.string "image"
+    t.integer "secret_santa_id"
   end
 
+  add_foreign_key "users", "users", column: "secret_santa_id"
 end
