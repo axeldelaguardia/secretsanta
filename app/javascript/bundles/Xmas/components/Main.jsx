@@ -20,19 +20,6 @@ const Main = (user) => {
   //   }
   // };
 
-  const handleRandomize = async () => {
-    const response = await axios.get('/assign', {
-      headers: {
-        'X-CSRF-Token': ReactOnRails.authenticityToken()
-      }
-    });
-    if (response.status === 200) {
-      alert("Secret Santas have been assigned!")
-      window.location.href = '/';
-    }
-  }
-  console.log(user)
-
   return (
     <div className={style.container}>
       <div className={style.containerTwo}>
@@ -59,6 +46,8 @@ const Main = (user) => {
                   <h3>{user.steven_ss}</h3>
                 </div>
                 : null }
+                <p className={style.limit}>$60 Gift Limit</p>
+                <p className={style.limit}>Gifts will be exchanged on Dec. 22th</p>
               </div>
               :
               <div className={style.secretSanta}>
@@ -71,7 +60,7 @@ const Main = (user) => {
           <div className={style.not_logged_in}>
             <p>Do you want to join our secret santa?</p>
             <p className={style.limit}>$60 Gift Limit</p>
-            <p className={style.limit}>Gifts will be exchanged on Dec. 25th</p>
+            <p className={style.limit}>Gifts will be exchanged on Dec. 22th</p>
             <p>Log in with your google account and you'll be included!</p>
  
             <button type="button" className={style.google_sign_in_button} onClick={handleLogin}>
@@ -79,18 +68,8 @@ const Main = (user) => {
             </button>
           </div>
         }
-
-        { user.first_name === 'Axel' ?
-          <div className={style.admin}>
-            <button type="button" className={style.assignSSButton} onClick={handleRandomize}>
-              Assign Secret Santas
-            </button>
-          </div>
-          : null
-        }
       </div>
     </div>
-    
   );
 };
 
