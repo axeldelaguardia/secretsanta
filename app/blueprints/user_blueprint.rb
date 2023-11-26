@@ -16,7 +16,7 @@ class UserBlueprint < Blueprinter::Base
     include_view :default
     include_view :extended
     field(:steven_ss) do |user|
-      stevens_ss = User.find_by(first_name: "Mervin").secret_santa_id
+      stevens_ss = User.find_by(first_name: "Steven").secret_santa_id
       User.find(stevens_ss).first_name if user.id == stevens_ss
       "#{User.find(stevens_ss).first_name} #{User.find(stevens_ss).last_name}"
     end
